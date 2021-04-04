@@ -1,16 +1,41 @@
-
+import java.util.*;
 class Student {
-
-	int studentNumber;
-
+	
+	private final int studentNumber;
+	private final Collection<Section> sections = new ArrayList<Section>();
+	
+	Student(int studentNumber, Collection<Section> sections){
+		if (studentNumber <0) {
+			throw new IllegalArgumentException("studentNumver should be non-negative, was:" + studentNumber);
+		}
+		if (sections == null) {
+			throw new NullPointerException("sections was null");
+		}
+		this.studentNumber = studentNumber;
+		this.sections.addAll(sections);
+	}
+	
+	void enlist(Section section) {
+		if (section == null) {
+			throw new NullPointerException("section was null");
+		}
+		sections.add(section);
+	}
+	
 	@Override
+	public String toString() {
+		return "Student #" + studentNumber;
+	}
+	
+	@Override
+	
 	public int hashCode() {
-		final int prime = 31;
+		final int prime =31;
 		int result = 1;
 		result = prime * result + studentNumber;
 		return result;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -20,10 +45,8 @@ class Student {
 		if (getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
-		if (studentNumber != other.studentNumber)
+		if (studentNumber !=other.studentNumber)
 			return false;
 		return true;
 	}
-	
-	
 }
