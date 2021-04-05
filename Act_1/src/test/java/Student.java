@@ -1,12 +1,13 @@
 import java.util.*;
+
 class Student {
 	
 	private final int studentNumber;
-	private final Collection<Section> sections = new ArrayList<Section>();
+	private final Collection<Section> sections = new HashSet<>();
 	
 	Student(int studentNumber, Collection<Section> sections){
 		if (studentNumber <0) {
-			throw new IllegalArgumentException("studentNumver should be non-negative, was:" + studentNumber);
+			throw new IllegalArgumentException("studentNumber should be non-negative, was:" + studentNumber);
 		}
 		if (sections == null) {
 			throw new NullPointerException("sections was null");
@@ -19,6 +20,7 @@ class Student {
 		if (section == null) {
 			throw new NullPointerException("section was null");
 		}
+		
 		sections.add(section);
 	}
 	

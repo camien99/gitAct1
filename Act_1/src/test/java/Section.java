@@ -1,17 +1,18 @@
-
+import org.apache.commons.lang3.*;
+import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.commons.lang3.Validate.*;
 
 class Section {
 	private final String sectionId;
 	
 	Section(String sectionId) {
-		if (!sectionId.matches("some regex for checking alphanum")) {
-			throw new IllegalArgumentException("sectionId must be alphanumericc, was:" + sectionId);
-		}
+		notBlank(sectionId);
+		isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumericc, was:" + sectionId);		
 		this.sectionId = sectionId;
-	}
+	} 
 	
 	@Override
-	public String toString() {
+	public String toString() { 
 		return sectionId;
 	}
 	
