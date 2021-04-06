@@ -20,21 +20,6 @@ class studentTest {
 		assertAll(
 				() -> assertTrue(sections.containsAll(List.of(sec1 , sec2))),
 				() -> assertEquals(2, sections.size())
-				);
-		
+				);	
+	
 	}
-
-	@Test
-	void enlist_2_sections_same_schedule() {
-		//1 student 2 sections w/ same sched
-		Student student = new Student(1, Collections.emptyList());
-		Section sec 1 = new Section("A", new Schedule(Days.MTH, Period.H0830));
-		Section sec 2 = new Section("B", new Schedule(Days.MTH, Period.H0830));
-		
-		//enlistment in both sections
-		student.englist(sec1);
-		
-		//exception thrown in the second enlistment
-		assertThrows(Exception.class, () -> student.enlist(sec2));
-			
-}
