@@ -14,6 +14,10 @@ class Section {
 		this.schedule = schedule;
 	} 
 	
+	Schedule getSchedule(){
+		return schedule;
+	}
+	
 	@Override
 	public String toString() { 
 		return sectionId;
