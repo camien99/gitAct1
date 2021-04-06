@@ -15,16 +15,12 @@ class Student {
 		this.studentNumber = studentNumber;
 		this.sections.addAll(sections);
 	}
-	//pa refactor
+
 	void enlist(Section section) {
 		if (section == null) {
 			throw new NullPointerException("section was null");
 		}
-		sections.forEach(Section currSection -> {
-			if (currsection.hasConflict(newSection)) {
-				throw new RuntimeException("current section" + currSection + "and new section " + section + "have same schedule at " + 	section.getSchedule());
-			}
-		});
+		
 		sections.add(section);
 	}
 	
