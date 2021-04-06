@@ -20,7 +20,11 @@ class Student {
 		if (section == null) {
 			throw new NullPointerException("section was null");
 		}
-		
+		sections.forEach(Section currSection -> {
+			if (currsection.getSchedule().equals(section.getSchedule())){
+				throw new RuntimeException("current section" + currSection + "and new section " + section + "have same schedule at " + 	section.getSchedule());
+			}
+		});
 		sections.add(section);
 	}
 	
