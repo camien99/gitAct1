@@ -16,12 +16,16 @@ class Student {
 		this.sections.addAll(sections);
 	}
 
-	void enlist(Section section) {
-		if (section == null) {
+	Student(int studentNumber) {
+		this(studentNumber, Collections.emptyList());
+	}
+	
+	void enlist(Section newSection) {
+		if (newSection == null) {
 			throw new NullPointerException("section was null");
 		}
-		
-		sections.add(section);
+		sections.forEach(currSection -> currSection.checkConflict(newSection));
+		sections.add(newSection);
 	}
 	
 	Collection<Section> getSections(){

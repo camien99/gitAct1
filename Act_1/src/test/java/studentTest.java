@@ -24,4 +24,16 @@ class studentTest {
 	
 	}
 	
+	@Test
+	void enlist_2_sections_same_schedule() {
+		// 1 student 2 sections same sched
+		Student student = new Student(1);
+		Section sec1 = new Section("A", new Schedule(Days.MTH, Period.H0830));
+		Section sec2 = new Section("B", new Schedule(Days.MTH, Period.H0830));
+		
+		// enlist in both sections
+		student.enlist(sec1);
+		//exception in second enlistment
+		assertThrows(ScheduleConflictException.class,() -> student.enlist(sec2));
+	}
 }

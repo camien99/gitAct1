@@ -12,8 +12,14 @@ class Section {
 		isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumericc, was:" + sectionId);		
 		this.sectionId = sectionId;
 		this.schedule = schedule;
-	} 
-		
+	}
+	
+	void checkConflict(Section other) {
+		if (this.schedule.equals(other.schedule)) {
+			throw new ScheduleConflictException("this section" + this + "and other section" + other + "have same schedule at " + schedule);
+		}
+	}
+	
 	@Override
 	public String toString() { 
 		return sectionId;
