@@ -18,6 +18,10 @@ class Section {
 		return schedule;
 	}
 	
+	boolean hasConflict(Section other) {
+		return this.schedule.equals(other.schedule);
+	}
+		
 	@Override
 	public String toString() { 
 		return sectionId;
