@@ -13,14 +13,6 @@ class Section {
 		this.sectionId = sectionId;
 		this.schedule = schedule;
 	} 
-	
-	Schedule getSchedule(){
-		return schedule;
-	}
-	
-	boolean hasConflict(Section other) {
-		return this.schedule.equals(other.schedule);
-	}
 		
 	@Override
 	public String toString() { 
