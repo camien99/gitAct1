@@ -5,7 +5,7 @@ class Student {
 	private final int studentNumber;
 	private final Collection<Section> sections = new HashSet<>();
 	
-	Student(int studentNumber, Collection<Section> sections){
+	Student(int studentNumber, Collection<Section> sections) {
 		if (studentNumber <0) {
 			throw new IllegalArgumentException("studentNumber should be non-negative, was:" + studentNumber);
 		}
@@ -22,6 +22,10 @@ class Student {
 		}
 		
 		sections.add(section);
+	}
+	
+	Collection<Section> getSections(){
+		return sections;
 	}
 	
 	@Override

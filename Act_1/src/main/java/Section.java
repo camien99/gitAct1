@@ -4,11 +4,14 @@ import static org.apache.commons.lang3.Validate.*;
 
 class Section {
 	private final String sectionId;
+	private final Schedule schedule;
 	
-	Section(String sectionId) {
+	Section(String sectionId, Schedule schedule) {
 		notBlank(sectionId);
+		notNull(schedule);
 		isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumericc, was:" + sectionId);		
 		this.sectionId = sectionId;
+		this.schedule = schedule;
 	} 
 	
 	@Override
