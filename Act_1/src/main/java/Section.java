@@ -1,4 +1,3 @@
-import org.apache.commons.lang3.*;
 import static org.apache.commons.lang3.StringUtils.*;
 import static org.apache.commons.lang3.Validate.*;
 
@@ -9,7 +8,7 @@ class Section {
 	Section(String sectionId, Schedule schedule) {
 		notBlank(sectionId);
 		notNull(schedule);
-		isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumericc, was:" + sectionId);		
+		isTrue(isAlphanumeric(sectionId), "sectionId must be alphanumeric, was:" + sectionId);		
 		this.sectionId = sectionId;
 		this.schedule = schedule;
 	}
